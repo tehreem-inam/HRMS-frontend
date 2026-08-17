@@ -1,0 +1,29 @@
+export const ROLES = {
+  SUPER_ADMIN: "SUPER_ADMIN",
+  COMPANY_OWNER: "COMPANY_OWNER",
+  HR: "HR",
+    EMPLOYEE: "EMPLOYEE",
+};
+
+export const ROLE_ACCESS = {
+  ALL: [
+    ROLES.SUPER_ADMIN,
+    ROLES.COMPANY_OWNER,
+    ROLES.HR,
+    ROLES.EMPLOYEE,
+  ],
+
+  ADMIN_ONLY: [
+    ROLES.SUPER_ADMIN,
+  ],
+
+  OWNER_AND_HR: [
+    ROLES.COMPANY_OWNER,
+    ROLES.HR,
+  ],
+
+  ADMIN_AND_OWNER: [
+    ROLES.SUPER_ADMIN,
+    ROLES.COMPANY_OWNER,
+  ],
+};
