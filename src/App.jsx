@@ -25,6 +25,10 @@ import Departments from "./pages/department/Departments";
 import DepartmentDetails from "./pages/department/DepartmentDetails";
 import Designations from "./pages/designations/Designations";
 import DesignationDetails from "./pages/designations/DesignationDetails";
+import Employees from "./pages/employees/Employees";
+import EmployeeDetails from "./pages/employees/EmployeeDetails";
+import MyProfile from "./pages/employees/MyProfile";
+
 
 import Loader from "./components/common/Loader";
 
@@ -165,6 +169,37 @@ export default function App() {
     
     </RoleProtectedRoute>
   }
+/>
+<Route
+  path="/employees"
+  element={
+    <RoleProtectedRoute
+      allowedRoles={[
+        ROLES.COMPANY_OWNER,
+        ROLES.HR,
+      ]}
+    >
+      <Employees />
+    </RoleProtectedRoute>
+  }
+/>
+<Route
+  path="/employees/:employeeId"
+  element={
+    <RoleProtectedRoute
+      allowedRoles={[
+        ROLES.COMPANY_OWNER,
+        ROLES.HR,
+      ]}
+    >
+      <EmployeeDetails />
+    
+    </RoleProtectedRoute>
+  }
+/>
+<Route
+  path="/employees/me/profile"
+  element={<MyProfile />}
 />
           </Route>
         </Route>

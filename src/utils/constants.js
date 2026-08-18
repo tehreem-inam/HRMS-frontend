@@ -9,6 +9,8 @@ import {
   MdFactCheck,
   MdPayments,
   MdSettings,
+    MdPerson,
+
 } from "react-icons/md";
 
 import { ROLE_ACCESS } from "./roles";
@@ -49,6 +51,12 @@ export const SIDEBAR_MENU = [
     path: "/employees",
     icon: MdBadge,
     roles: ROLE_ACCESS.OWNER_AND_HR,
+  },
+ {
+    title: "My Profile",
+    path: "/employees/me/profile",
+    icon: MdPerson,
+    roles: ROLE_ACCESS.ALL,
   },
   {
     title: "Leave",

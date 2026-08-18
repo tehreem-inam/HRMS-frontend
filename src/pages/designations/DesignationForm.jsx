@@ -157,14 +157,15 @@ export default function DesignationForm({
       )}
 
       {/* Description */}
-      <Input
-        label="Description"
-        placeholder="Enter description"
-        error={
-          errors.description?.message
-        }
-        {...register("description")}
-      />
+     {/* Description - CREATE ONLY */}
+{!designation && (
+  <Input
+    label="Description"
+    placeholder="Enter description"
+    error={errors.description?.message}
+    {...register("description")}
+  />
+)}
 
       {/* Submit */}
       <div className="flex justify-end gap-3 pt-2">
